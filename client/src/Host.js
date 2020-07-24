@@ -71,7 +71,7 @@ class Host extends Component {
       // }).catch(function (error) {
       //   console.log(error);
       // });
-    }
+    // }
   }
 
   componentWillUnmount() {
