@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import socketIOClient from 'socket.io-client';
+import "./Host.css";
 // var ss = require('socket.io-stream');
 const { endpoint } = "http://ec2-18-224-93-114.us-east-2.compute.amazonaws.com/"
 const socket = socketIOClient(endpoint);
-import "./Host.css"
 
 class Host extends Component {
   constructor(props) {
