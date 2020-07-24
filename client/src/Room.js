@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import socketIOClient from 'socket.io-client';
 import "./Room.css"
-const { endpoint } = "localhost:3000"
+const { endpoint } = "http://ec2-18-224-93-114.us-east-2.compute.amazonaws.com/"
 const socket = socketIOClient(endpoint);
 // var ss = require('socket.io-stream');
 
