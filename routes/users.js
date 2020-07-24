@@ -18,11 +18,11 @@ router.get('/auth', function(req, res, next) {
   if (!req.query.token) {
     res.status(400).send("Invalid Token")
   }
-  else if (!req.sessionID) {
+  else if (!req.sessionID || !req.session.user) {
     res.status(401).send("Unauthorized Access")
   }
   else {
-    res.status(200).json({body: {results: {status: "Authorized", username: req.seesion.user}}});
+    res.status(200).json({body: {results: {status: "Authorized", username: req.session.user}}});
   }
 })
 
