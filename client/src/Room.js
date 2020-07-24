@@ -92,7 +92,7 @@ class Room extends Component {
           if (dataItem && dataItem.message) {
             return (
               <React.Fragment key={i}>
-                <div style={{border: '2px solid blue'}}>
+                <div className="old_messages">
                   <h4>{dataItem.username}</h4>
                   <p>{dataItem.message}</p>
                 </div>
@@ -110,7 +110,7 @@ class Room extends Component {
   handleNewChat() {
     if (this.state.message) {
       return (
-        <div style={{border: '2px solid red'}}>
+        <div className="new_message">
           <h4>{this.state.message.username}</h4>
           <p>{this.state.message.message}</p>
         </div>

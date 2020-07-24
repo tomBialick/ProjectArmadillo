@@ -4,3 +4,15 @@
   background: black;
   margin-left: 20%;
 }
+
+.old_messages {
+  width: 70%;
+  border: 2px solid blue;
+  margin-left: 15%;
+}
+
+.new_message {
+  width: 70%;
+  border: 2px solid red;
+  margin-left: 15%;
+}
