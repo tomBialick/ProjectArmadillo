@@ -25,12 +25,12 @@ class Host extends Component {
       this.setState(state => ({message: {username: username, message: data}}))
     })
 
-    // if (navigator.mediaDevices.getUserMedia) {
-    //   // var answersFrom = {}
-    //   var video = document.getElementById("selfVideo")
-    //   navigator.mediaDevices.getUserMedia({ video: true })
-    //   .then(function (stream) {
-    //     video.srcObject = stream;
+    if (navigator.mediaDevices.getUserMedia) {
+      // var answersFrom = {}
+      var video = document.getElementById("selfVideo")
+      navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
         // const recorder = new MediaStreamRecorder(videoStream);
         // // var stream = ss.createStream();
         // console.log("Stream " + videoStream);
@@ -70,8 +70,8 @@ class Host extends Component {
 
       // }).catch(function (error) {
       //   console.log(error);
-      // });
-    // }
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -129,12 +129,12 @@ class Host extends Component {
     this.props.goBack();
   }
 
-// <video autoplay="true" id="selfVideo"></video>
+// <div id="whereHostFeedWouldGo"></div>
   render() {
     return (
       <div className="Host">
         <button onClick={(e) => this.handleGoBack(e)}>Go Back</button>
-        <div id="whereHostFeedWouldGo"></div>
+        <video autoplay="true" id="selfVideo"></video>
         <div id = "chat-log-area">
           <div id = "new-chat-log-area">
             {this.handleNewChat()}
