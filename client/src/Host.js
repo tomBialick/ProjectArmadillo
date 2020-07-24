@@ -3,6 +3,7 @@ import socketIOClient from 'socket.io-client';
 // var ss = require('socket.io-stream');
 const { endpoint } = "http://ec2-18-224-93-114.us-east-2.compute.amazonaws.com/"
 const socket = socketIOClient(endpoint);
+import "./Host.css"
 
 class Host extends Component {
   constructor(props) {
@@ -24,12 +25,12 @@ class Host extends Component {
       this.setState(state => ({message: {username: username, message: data}}))
     })
 
-    if (navigator.mediaDevices.getUserMedia) {
-      // var answersFrom = {}
-      var video = document.getElementById("selfVideo")
-      navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        video.srcObject = stream;
+    // if (navigator.mediaDevices.getUserMedia) {
+    //   // var answersFrom = {}
+    //   var video = document.getElementById("selfVideo")
+    //   navigator.mediaDevices.getUserMedia({ video: true })
+    //   .then(function (stream) {
+    //     video.srcObject = stream;
         // const recorder = new MediaStreamRecorder(videoStream);
         // // var stream = ss.createStream();
         // console.log("Stream " + videoStream);
@@ -67,9 +68,9 @@ class Host extends Component {
         //
         // createOffer();
 
-      }).catch(function (error) {
-        console.log(error);
-      });
+      // }).catch(function (error) {
+      //   console.log(error);
+      // });
     }
   }
 
@@ -128,11 +129,12 @@ class Host extends Component {
     this.props.goBack();
   }
 
+// <video autoplay="true" id="selfVideo"></video>
   render() {
     return (
       <div className="Host">
         <button onClick={(e) => this.handleGoBack(e)}>Go Back</button>
-        <video autoplay="true" id="selfVideo"></video>
+        <div id="whereHostFeedWouldGo"></div>
         <div id = "chat-log-area">
           <div id = "new-chat-log-area">
             {this.handleNewChat()}
