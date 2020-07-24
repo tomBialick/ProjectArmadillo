@@ -124,6 +124,12 @@ class Room extends Component {
       <div className="Room">
         <button onClick={(e) => this.handleGoBack(e)}>Go Back</button>
         <div id="whereLiveFeedWouldGo"></div>
+        <form id="chat-form">
+          <label>Chat:
+            <input id="chatbox" type="text" onChange={this.chatChange} />
+          </label>
+          <button onClick={(e) => this.sendChat(e)}>Send</button>
+        </form>
         <div id = "chat-log-area">
           <div id = "new-chat-log-area">
             {this.handleNewChat()}
@@ -132,12 +138,6 @@ class Room extends Component {
             {this.handleOldChat()}
           </div>
         </div>
-        <form id="chat-form">
-          <label>Chat:
-            <input id="chatbox" type="text" onChange={this.chatChange} />
-          </label>
-          <button onClick={(e) => this.sendChat(e)}>Send</button>
-        </form>
       </div>
     )
   }
